@@ -137,20 +137,17 @@ cat > settings.json <<EOF
         "finder",
         "launchpad",
         "safari",
+        "xcode",
+	"discord",
+	"maciasl",
+        "settings",
+	"propertree",
+	"ioregistryexplorer",
+        "terminal",
         "message",
-        "music",
-		"app store",
-		"settings",
-		"disk utility",
-		"terminal",
-		"discord",
-		"riot",
-		"maciasl",
-		"xcode",
-		"ioregistryexplorer",
-		"propertree",
-		"github desktop",
-		"textmate"
+        "Element",
+        "github desktop",
+        "textmate"
     ]
 }
 EOF
