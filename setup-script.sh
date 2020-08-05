@@ -18,9 +18,9 @@ brew update
 # Install some packages
 
 PACKAGES=(
-	node
-	yarn
-	bash
+    node
+    yarn
+    bash
     python
     python3
 )
@@ -68,13 +68,13 @@ echo "\033[0;31m Installing MAS...\033[0m"
 brew install mas
 
 MASS=(
-	808809998 # Xcode
-	441258766 # Magnet
-	409201541 # Pages
-	409183694 # Keynote
-	409203825 # Numbers
-	408981434 # iMovie
-	425424353 # Unarchiver
+    808809998 # Xcode
+    441258766 # Magnet
+    409201541 # Pages
+    409183694 # Keynote
+    409203825 # Numbers
+    408981434 # iMovie
+    425424353 # Unarchiver
 )
 	
 echo "\033[0;32m Installing MAS apps...\033[0m"
