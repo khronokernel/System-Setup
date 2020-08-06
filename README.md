@@ -13,5 +13,6 @@ Simple scripts to setup my personal macOS machines, includes:
 ```sh
 git clone https://github.com/khronokernel/System-Setup
 cd System-Setup
-./setup-script.sh
+chmod +x setup-script.sh
+setup-script.sh
 ```
