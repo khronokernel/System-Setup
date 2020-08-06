@@ -26,3 +26,4 @@ setup-script.sh
     * Show on Main Display Only
 * Arrange menubar items
 * Set HiDPI scale to 1440p on both monitors
+* set monitor arrangement 
