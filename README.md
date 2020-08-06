@@ -7,3 +7,11 @@ Simple scripts to setup my personal macOS machines, includes:
 * AppStore installs(via MAS)
 * Installing CorpNewt's scripts
 
+
+## Install
+
+```sh
+git clone https://github.com/khronokernel/System-Setup
+cd System-Setup
+./setup-script.sh
+```
