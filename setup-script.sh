@@ -68,13 +68,13 @@ echo "\033[0;31m Installing MAS...\033[0m"
 brew install mas
 
 MASS=(
-    808809998 # Xcode
-    441258766 # Magnet
-    409201541 # Pages
-    409183694 # Keynote
-    409203825 # Numbers
-    408981434 # iMovie
-    425424353 # Unarchiver
+	808809998 # Xcode
+	441258766 # Magnet
+	409201541 # Pages
+	409183694 # Keynote
+	409203825 # Numbers
+	408981434 # iMovie
+	425424353 # Unarchiver
 )
 	
 echo "\033[0;32m Installing MAS apps...\033[0m"
@@ -143,8 +143,11 @@ fi
 
 # Misc system fixes
 
+echo "\033[0;31m Setting misc preferences...\033[0m"
+
 ## Fix the Dock
 
+echo "\033[0;32m Setting Dock preferences...\033[0m"
 cd Dock-Settings
 cp com.apple.dock.plist ~/Library/Preferences/
 killall Dock
@@ -152,7 +155,7 @@ killall Dock
 
 ## Fix trackpad settings
 
-echo "\033[0;31m Setting trackpad preferences...\033[0m"
+echo "\033[0;32m Setting trackpad preferences...\033[0m"
 
 defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
