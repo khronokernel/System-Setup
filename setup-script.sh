@@ -39,6 +39,7 @@ brew install caskroom/cask/brew-cask
 CASKS=(
     adoptopenjdk
     balenaetcher
+    coolterm
     discord
     element # Previously Riot
     firefox
