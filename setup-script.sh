@@ -163,3 +163,11 @@ defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+
+## Fix Energy Saver settings 
+
+echo "\033[0;32m Setting Energy Saver preferences...\033[0m"
+
+pmset powernap 0
+pmset womp 0
+pmset sleep 0
