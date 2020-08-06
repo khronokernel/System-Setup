@@ -23,6 +23,8 @@ PACKAGES=(
     bash
     python
     python3
+    composer
+    java
 )
 
 echo "\033[0;31m Installing packages...\033[0m"
