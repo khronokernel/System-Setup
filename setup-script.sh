@@ -87,72 +87,70 @@ git clone https://github.com/khronokernel/IORegistryClone
 cd IORegistryClone
 unzip ioreg-302.zip
 mv IORegistryExplorer.app /Applications/
+cd
 
 echo "\033[0;31m Installing useful scripts\033[0m"
 
 # CorpNewt's scripts:
 
-# MountEFI
+## MountEFI
 echo "\033[0;32m Installing MountEFI\033[0m"
 git clone https://github.com/corpnewt/MountEFI
 cd MountEFI
 chmod +x MountEFI.command
 cd
 
-# ProperTree
-echo "\033[0;32m Installing ProperTree\033[0m"
-git clone https://github.com/corpnewt/ProperTree
-cd ProperTree
-chmod +x ProperTree.command
-cd Scripts
-python3 buildapp.command
-cd ..
-mv ProperTree.app /Applications/
-cd
-
-# OCConfigCompare
+## OCConfigCompare
 echo "\033[0;32m Installing MountEFI\033[0m"
 git clone https://github.com/corpnewt/OCConfigCompare
 cd OCConfigCompare
 chmod +x OCConfigCompare.command
 cd
 
-# icontool
+## icontool
 echo "\033[0;32m Installing icontool\033[0m"
 git clone https://github.com/corpnewt/icontool
 cd icontool
 chmod +x icontool
 cd
 
-# CleanDock
-echo "\033[0;32m Installing CleanDock\033[0m"
-git clone https://github.com/corpnewt/CleanDock
-cd CleanDock
-chmod +x CleanDock.command
-cd Scripts
-rm settings.json
-cat > settings.json <<EOF
-{
-    "allow": [
-        "finder",
-        "launchpad",
-        "safari",
-        "xcode",
-	"discord",
-	"maciasl",
-        "settings",
-	"propertree",
-	"ioregistryexplorer",
-        "terminal",
-        "message",
-        "Element",
-        "github desktop",
-        "textmate"
-    ]
-}
-EOF
-cd ..
-python3 CleanDock.command
+## ProperTree
+
+### Due to issues with Big Sur and Python, I've added a few paths
+
+base_ver=11.0
+ver=$(sw_vers | grep ProductVersion | cut -d':' -f2 | tr -d ' ')
+if [ $(echo -e $base_ver"\n"$ver | sort -V | tail -1) == "$base_ver" ]
+then 
+	echo "\033[0;32m Detected 10.15 or older OS\033[0m"
+	echo "\033[0;32m Installing ProperTree from source\033[0m"
+	git clone https://github.com/corpnewt/ProperTree
+	cd ProperTree
+	chmod +x ProperTree.command
+	cd Scripts
+	python3 buildapp.command
+	cd ..
+	mv ProperTree.app /Applications/
+	cd
+else 
+	echo "\033[0;32m Detected 11.0 or newer OS\033[0m"
+	echo "\033[0;32m Installing ProperTree from source\033[0m"
+	cd ProperTree-GOOD
+	unzip ProperTree(11).zip
+	mv ProperTree(11).app /Applications/
+	cd
+fi
+
+# Misc system fixes
+
+## Fix the Dock
+
+cd Dock-Settings
+cp com.apple.dock.plist ~/Library/Preferences/
+killall Dock
+
+
+## Fix trackpad settings
 
 echo "\033[0;31m Setting trackpad preferences...\033[0m"
 
