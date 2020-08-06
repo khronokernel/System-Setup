@@ -136,7 +136,7 @@ then
 	cd
 else 
 	echo "\033[0;32m Detected 11.0 or newer OS\033[0m"
-	echo "\033[0;32m Installing ProperTree from source\033[0m"
+	echo "\033[0;32m Installing pre-built ProperTree\033[0m"
 	cd ProperTree-GOOD
 	unzip ProperTree(11).zip
 	mv ProperTree(11).app /Applications/
