@@ -91,7 +91,7 @@ echo "\033[0;32m Installing IOReg\033[0m"
 git clone https://github.com/khronokernel/IORegistryClone
 cd IORegistryClone
 unzip ioreg-302.zip
-mv IORegistryExplorer.app /Applications/
+mv IORegistryExplorer.app /Applications/IORegistryExplorer.app
 cd
 
 echo "\033[0;31m Installing useful scripts\033[0m"
@@ -135,14 +135,14 @@ then
 	cd Scripts
 	python3 buildapp.command
 	cd ..
-	mv ProperTree.app /Applications/
+	mv ProperTree.app /Applications/ProperTree.app
 	cd
 else 
 	echo "\033[0;32m Detected 11.0 or newer OS\033[0m"
 	echo "\033[0;32m Installing pre-built ProperTree\033[0m"
 	cd ProperTree-GOOD
 	unzip ProperTree(11).zip
-	mv ProperTree(11).app /Applications/
+	mv ProperTree(11).app /Applications/ProperTree.app
 	cd
 fi
 
@@ -154,7 +154,7 @@ echo "\033[0;31m Setting misc preferences...\033[0m"
 
 echo "\033[0;32m Setting Dock preferences...\033[0m"
 cd Dock-Settings
-cp com.apple.dock.plist ~/Library/Preferences/
+mv com.apple.dock.plist ~/Library/Preferences/com.apple.dock.plist
 killall Dock
 
 
@@ -173,4 +173,4 @@ echo "\033[0;32m Setting Energy Saver preferences...\033[0m"
 
 pmset powernap 0
 pmset womp 0
-pmset sleep 0
+pmset sleep 15
