@@ -15,7 +15,12 @@ Simple scripts to setup my personal macOS machines, includes:
 git clone https://github.com/khronokernel/System-Setup
 cd System-Setup
 chmod +x setup-script.sh
+
+## Basic setup, all my machines have the same settings
 setup-script.sh
+
+## Enables HiDPI on my HP Elite X2 G1
+HiDPI-script.sh
 ```
 
 ## TO-DO
