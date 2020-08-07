@@ -39,6 +39,7 @@ brew install caskroom/cask/brew-cask
 CASKS=(
     adoptopenjdk
     balenaetcher
+    beyond-compare
     coolterm
     discord
     element # Previously Riot
@@ -62,6 +63,7 @@ CASKS=(
     typora
     vanilla
     virtualbox
+    visual-studio-code
 )
 
 echo "\033[0;32m Installing cask apps...\033[0m"
