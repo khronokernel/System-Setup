@@ -26,4 +26,8 @@ setup-script.sh
     * Show on Main Display Only
 * Arrange menubar items
 * Set HiDPI scale to 1440p on both monitors
-* set monitor arrangement 
+* set monitor arrangement
+* Check SMBIOS type, and determine if CoconutBattery should be installed
+  * Format = `%ww %r %p%`
+* Install custom HiDPI settings if HP Elite X2 detected
+  * `/Library/Displays/Contents/Resources/Overrides/DisplayVendorID-30e4/DisplayProductID-4a5`
