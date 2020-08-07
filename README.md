@@ -29,5 +29,3 @@ setup-script.sh
 * set monitor arrangement
 * Check SMBIOS type, and determine if CoconutBattery should be installed
   * Format = `%ww %r %p%`
-* Install custom HiDPI settings if HP Elite X2 detected
-  * `/Library/Displays/Contents/Resources/Overrides/DisplayVendorID-30e4/DisplayProductID-4a5`
