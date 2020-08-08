@@ -34,7 +34,6 @@ echo "\033[0;32m Cleaning up...\033[0m"
 brew cleanup
 
 echo "\033[0;31m Installing cask...\033[0m"
-brew install caskroom/cask/brew-cask
 
 CASKS=(
     adoptopenjdk
@@ -83,7 +82,7 @@ MASS=(
 )
 	
 echo "\033[0;32m Installing MAS apps...\033[0m"
-brew mas install ${MASS[@]}
+mas install ${MASS[@]}
 
 echo "\033[0;31m Installing other macOS apps...\033[0m"
 
