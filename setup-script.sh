@@ -7,12 +7,12 @@ sudo -v
 # Check for Homebrew, install if we don't have it
 
 if test ! $(which brew); then
-    echo "\033[0;31m Installing homebrew...\033[0m"
+    echo -e "\033[0;31m Installing homebrew...\033[0m"
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
 # Update homebrew recipes
-echo "\033[0;32m Updating homebrew...\033[0m"
+echo -e "\033[0;32m Updating homebrew...\033[0m"
 brew update
 
 # Install some packages
@@ -27,13 +27,13 @@ PACKAGES=(
     java
 )
 
-echo "\033[0;31m Installing packages...\033[0m"
+echo -e "\033[0;31m Installing packages...\033[0m"
 brew install ${PACKAGES[@]}
 
-echo "\033[0;32m Cleaning up...\033[0m"
+echo -e "\033[0;32m Cleaning up...\033[0m"
 brew cleanup
 
-echo "\033[0;31m Installing cask...\033[0m"
+echo -e "\033[0;31m Installing cask...\033[0m"
 
 CASKS=(
     adoptopenjdk
@@ -65,10 +65,10 @@ CASKS=(
     visual-studio-code
 )
 
-echo "\033[0;32m Installing cask apps...\033[0m"
+echo -e "\033[0;32m Installing cask apps...\033[0m"
 brew cask install ${CASKS[@]}
 
-echo "\033[0;31m Installing MAS...\033[0m"
+echo -e "\033[0;31m Installing MAS...\033[0m"
 brew install mas
 
 MASS=(
@@ -81,38 +81,38 @@ MASS=(
 	425424353 # Unarchiver
 )
 	
-echo "\033[0;32m Installing MAS apps...\033[0m"
+echo -e "\033[0;32m Installing MAS apps...\033[0m"
 mas install ${MASS[@]}
 
-echo "\033[0;31m Installing other macOS apps...\033[0m"
+echo -e "\033[0;31m Installing other macOS apps...\033[0m"
 
-echo "\033[0;32m Installing IOReg\033[0m"
+echo -e "\033[0;32m Installing IOReg\033[0m"
 git clone https://github.com/khronokernel/IORegistryClone
 cd IORegistryClone
 unzip ioreg-302.zip
 mv IORegistryExplorer.app /Applications/IORegistryExplorer.app
 cd
 
-echo "\033[0;31m Installing useful scripts\033[0m"
+echo -e "\033[0;31m Installing useful scripts\033[0m"
 
 # CorpNewt's scripts:
 
 ## MountEFI
-echo "\033[0;32m Installing MountEFI\033[0m"
+echo -e "\033[0;32m Installing MountEFI\033[0m"
 git clone https://github.com/corpnewt/MountEFI
 cd MountEFI
 chmod +x MountEFI.command
 cd
 
 ## OCConfigCompare
-echo "\033[0;32m Installing MountEFI\033[0m"
+echo -e "\033[0;32m Installing MountEFI\033[0m"
 git clone https://github.com/corpnewt/OCConfigCompare
 cd OCConfigCompare
 chmod +x OCConfigCompare.command
 cd
 
 ## icontool
-echo "\033[0;32m Installing icontool\033[0m"
+echo -e "\033[0;32m Installing icontool\033[0m"
 git clone https://github.com/corpnewt/icontool
 cd icontool
 chmod +x icontool
@@ -126,8 +126,8 @@ base_ver=11.0
 ver=$(sw_vers | grep ProductVersion | cut -d':' -f2 | tr -d ' ')
 if [ $(echo -e $base_ver"\n"$ver | sort -V | tail -1) == "$base_ver" ]
 then 
-	echo "\033[0;32m Detected 10.15 or older OS\033[0m"
-	echo "\033[0;32m Installing ProperTree from source\033[0m"
+	echo -e "\033[0;32m Detected 10.15 or older OS\033[0m"
+	echo -e "\033[0;32m Installing ProperTree from source\033[0m"
 	git clone https://github.com/corpnewt/ProperTree
 	cd ProperTree
 	chmod +x ProperTree.command
@@ -137,8 +137,8 @@ then
 	mv ProperTree.app /Applications/ProperTree.app
 	cd
 else 
-	echo "\033[0;32m Detected 11.0 or newer OS\033[0m"
-	echo "\033[0;32m Installing pre-built ProperTree\033[0m"
+	echo -e "\033[0;32m Detected 11.0 or newer OS\033[0m"
+	echo -e "\033[0;32m Installing pre-built ProperTree\033[0m"
 	cd ProperTree-GOOD
 	unzip ProperTree-11.zip
 	mv ProperTree.app /Applications/ProperTree.app
@@ -147,11 +147,11 @@ fi
 
 # Misc system fixes
 
-echo "\033[0;31m Setting misc preferences...\033[0m"
+echo -e "\033[0;31m Setting misc preferences...\033[0m"
 
 ## Fix the Dock
 
-echo "\033[0;32m Setting Dock preferences...\033[0m"
+echo -e "\033[0;32m Setting Dock preferences...\033[0m"
 cd Dock-Settings
 mv com.apple.dock.plist ~/Library/Preferences/com.apple.dock.plist
 killall Dock
@@ -159,7 +159,7 @@ killall Dock
 
 ## Fix trackpad settings
 
-echo "\033[0;32m Setting trackpad preferences...\033[0m"
+echo -e "\033[0;32m Setting trackpad preferences...\033[0m"
 
 defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
@@ -168,7 +168,7 @@ defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
 ## Fix Energy Saver settings 
 
-echo "\033[0;32m Setting Energy Saver preferences...\033[0m"
+echo -e "\033[0;32m Setting Energy Saver preferences...\033[0m"
 
 pmset powernap 0
 pmset womp 0
