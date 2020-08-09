@@ -52,7 +52,7 @@ CASKS=(
     idafree
     istat-menus
     keka
-    #logitech-options - Currently broken 
+    logitech-options # From cask-drivers
     maciasl # From Acidanthera
     minecraft
     monitorcontrol
@@ -174,3 +174,10 @@ echo -e "\033[0;32m Setting Energy Saver preferences...\033[0m"
 pmset powernap 0
 pmset womp 0
 pmset sleep 15
+
+## Fix Finder
+
+echo -e "\033[0;32m Setting Finder preferences...\033[0m"
+
+defaults write com.apple.finder _FXSortFoldersFirst -bool YES
+killall Finder
