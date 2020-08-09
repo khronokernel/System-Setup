@@ -8,7 +8,6 @@ Simple scripts to setup my personal macOS machines, includes:
 * Installing CorpNewt's scripts
 * Misc settings
 
-
 ## Install
 
 ```sh
@@ -18,10 +17,10 @@ chmod +x setup-script.sh
 chmod +x HiDPI-Fixup.sh
 
 ## Basic setup, all my machines have the same settings
-setup-script.sh
+./setup-script.sh
 
 ## Enables HiDPI on my HP Elite X2 G1
-HiDPI-Fixup.sh
+./HiDPI-Fixup.sh
 ```
 
 ## TO-DO
