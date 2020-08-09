@@ -14,6 +14,7 @@ fi
 # Update homebrew recipes
 echo -e "\033[0;32m Updating homebrew...\033[0m"
 brew update
+brew tap homebrew/cask-drivers
 
 # Install some packages
 
