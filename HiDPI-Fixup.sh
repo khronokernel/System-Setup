@@ -11,6 +11,7 @@ defaults delete /Library/Preferences/com.apple.windowserver DisplayResolutionDis
 
 ## Create folders
 echo -e "\033[0;32m Creating Display Override folders \033[0m"
+sudo -i
 cd /
 cd Library
 mkdir Displays
@@ -26,13 +27,14 @@ cd
 
 ## Copy over HiDPI plist
 echo -e "\033[0;32m Moving HiDPI plist to correct location \033[0m"
-cp /System-Fixup/Display-Fixup/DisplayProductID-4a5.plist /Library/Displays/Contents/Resources/Overrides/DisplayVendorID-30e4/DisplayProductID-4a5
+cp /Display-Fixup/DisplayProductID-4a5.plist /Library/Displays/Contents/Resources/Overrides/DisplayVendorID-30e4/DisplayProductID-4a5
 
 ## Reboot
 
-echo "Finished running the script, would you loke to reboot?"
-select yn in "Yes" "No"
-case $yn in
-    Yes ) shutdown -r now;;
-    No ) exit;;
-esac
+echo -e "\033[0;32m Finished running the script, would you loke to reboot? \033[0m"
+read -p "Reboot (y/n)?" CONT
+if [ "$CONT" = "y" ]; then
+  shutdown -r now;;
+else
+  exit;;
+fi
