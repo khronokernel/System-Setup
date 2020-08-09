@@ -171,6 +171,7 @@ defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
 echo -e "\033[0;32m Setting Energy Saver preferences...\033[0m"
 
+sudo -i
 pmset powernap 0
 pmset womp 0
 pmset sleep 15
