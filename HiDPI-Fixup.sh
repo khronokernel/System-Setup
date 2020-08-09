@@ -11,6 +11,7 @@ defaults delete /Library/Preferences/com.apple.windowserver DisplayResolutionDis
 
 ## Create folders
 echo -e "\033[0;32m Creating Display Override folders \033[0m"
+cd
 mkdir Displays
 cd /Displays
 mkdir Contents
