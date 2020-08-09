@@ -51,7 +51,7 @@ CASKS=(
     idafree
     istat-menus
     keka
-    logitech-options
+    #logitech-options - Currently broken 
     maciasl # From Acidanthera
     minecraft
     monitorcontrol
