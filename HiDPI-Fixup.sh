@@ -6,7 +6,7 @@ sudo -v
 
 ## Allow custom HiDPI resolution
 echo -e "\033[0;32m Patching windowserver preferences \033[0m"
-defaults write /Library/Preferences/com.apple.windowserver.plist DisplayResolutionEnabled -bool true
+sudo defaults write /Library/Preferences/com.apple.windowserver.plist DisplayResolutionEnabled -bool true
 
 ## Create folders
 echo -e "\033[0;32m Creating Display Override folders \033[0m"
@@ -33,7 +33,7 @@ sudo cp ~/System-Setup/HiDPI-Fixup/DisplayProductID-4a5.plist /Library/Displays/
 echo -e "\033[0;32m Finished running the script, would you like to reboot? \033[0m"
 read -p "Reboot (y/n)?" CONT
 if [ "$CONT" = "y" ]; then
-  shutdown -r now
+  sudo reboot
 else
   exit
 fi
