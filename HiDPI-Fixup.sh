@@ -26,7 +26,7 @@ cd /
 
 ## Copy over HiDPI plist
 echo -e "\033[0;32m Moving HiDPI plist to correct location \033[0m"
-sudo cp ~/System-Setup/Display-Fixup/DisplayProductID-4a5.plist /Library/Displays/Contents/Resources/Overrides/DisplayVendorID-30e4/DisplayProductID-4a5
+sudo cp ~/System-Setup/HiDPI-Fixup/DisplayProductID-4a5.plist /Library/Displays/Contents/Resources/Overrides/DisplayVendorID-30e4/DisplayProductID-4a5
 
 ## Reboot
 
