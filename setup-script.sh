@@ -56,7 +56,7 @@ CASKS=(
     maciasl # From Acidanthera
     minecraft
     monitorcontrol
-    padbury-clock
+    #padbury-clock
     qbittorrent
     steam
     textmate
@@ -153,8 +153,7 @@ echo -e "\033[0;31m Setting misc preferences...\033[0m"
 ## Fix the Dock
 
 echo -e "\033[0;32m Setting Dock preferences...\033[0m"
-cd Dock-Settings
-mv com.apple.dock.plist ~/Library/Preferences/com.apple.dock.plist
+sudo cp ~/System-Setup/Dock-Settings/com.apple.dock.plist ~/Library/Preferences/com.apple.dock.plist
 killall Dock
 
 
