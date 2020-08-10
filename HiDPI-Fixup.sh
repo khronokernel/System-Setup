@@ -15,19 +15,19 @@ sudo -i
 cd /
 cd Library
 mkdir Displays
-cd /Displays
+cd Displays
 mkdir Contents
-cd /Contents
+cd Contents
 mkdir Resources
-cd /Resources
+cd Resources
 mkdir Overrides
-cd /Overrides
+cd Overrides
 mkdir DisplayVendorID-30e4
-cd
+cd /
 
 ## Copy over HiDPI plist
 echo -e "\033[0;32m Moving HiDPI plist to correct location \033[0m"
-cp /Display-Fixup/DisplayProductID-4a5.plist /Library/Displays/Contents/Resources/Overrides/DisplayVendorID-30e4/DisplayProductID-4a5
+cp ~/System-Setup/Display-Fixup/DisplayProductID-4a5.plist /Library/Displays/Contents/Resources/Overrides/DisplayVendorID-30e4/DisplayProductID-4a5
 
 ## Reboot
 
