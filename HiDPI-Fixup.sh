@@ -33,7 +33,7 @@ sudo cp ~/System-Setup/HiDPI-Fixup/DisplayProductID-4a5.plist /Library/Displays/
 echo -e "\033[0;32m Finished running the script, would you like to reboot? \033[0m"
 read -p "Reboot (y/n)?" CONT
 if [ "$CONT" = "y" ]; then
-  shutdown -r now;;
+  shutdown -r now
 else
-  exit;;
+  exit
 fi
