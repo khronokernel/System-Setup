@@ -73,7 +73,7 @@ echo -e "\033[0;31m Installing MAS...\033[0m"
 brew install mas
 
 MASS=(
-	808809998 # Xcode
+	#808809998 # Xcode
 	441258766 # Magnet
 	409201541 # Pages
 	409183694 # Keynote
@@ -95,6 +95,21 @@ mv IORegistryExplorer.app /Applications/IORegistryExplorer.app
 cd
 
 echo -e "\033[0;31m Installing useful scripts\033[0m"
+
+# Add tools to path
+
+## gfxutil
+echo -e "\033[0;32m Installing gfxutil\033[0m"
+git clone https://github.com/acidanthera/gfxutil
+cd gfxutil
+chmod +x gfxutil
+sudo cp gfxutil /usr/local/bin
+cd
+
+## iASL
+echo -e "\033[0;32m Adding iASL to path\033[0m"
+chmod +x /Applications/maciASL.app/Contents/MacOS/iasl-stable
+sudo cp /Applications/maciASL.app/Contents/MacOS/iasl-stable /usr/local/bin
 
 # CorpNewt's scripts:
 
@@ -127,8 +142,7 @@ base_ver=11.0
 ver=$(sw_vers | grep ProductVersion | cut -d':' -f2 | tr -d ' ')
 if [ $(echo -e $base_ver"\n"$ver | sort -V | tail -1) == "$base_ver" ]
 then 
-	echo -e "\033[0;32m Detected 10.15 or older OS\033[0m"
-	echo -e "\033[0;32m Installing ProperTree from source\033[0m"
+	echo -e "\033[0;32m Detected 10.15 or older OS, Installing ProperTree from source\033[0m"
 	git clone https://github.com/corpnewt/ProperTree
 	cd ProperTree
 	chmod +x ProperTree.command
@@ -138,8 +152,7 @@ then
 	mv ProperTree.app /Applications/ProperTree.app
 	cd
 else 
-	echo -e "\033[0;32m Detected 11.0 or newer OS\033[0m"
-	echo -e "\033[0;32m Installing pre-built ProperTree\033[0m"
+	echo -e "\033[0;32m Detected 11.0 or newer OS, Installing pre-built ProperTree \033[0m"
 	cd ProperTree-GOOD
 	unzip ProperTree-11.zip
 	mv ProperTree.app /Applications/ProperTree.app
