@@ -6,13 +6,13 @@ sudo -v
 
 ## Allow custom HiDPI resolution
 echo -e "\033[0;32m Patching windowserver preferences \033[0m"
-defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool YES
-defaults delete /Library/Preferences/com.apple.windowserver DisplayResolutionDisabled
+defaults write /Library/Preferences/com.apple.windowserver.plist DisplayResolutionEnabled -bool true
 
 ## Create folders
 echo -e "\033[0;32m Creating Display Override folders \033[0m"
 cd /
 cd Library
+sudo rmdir Displays
 sudo mkdir Displays
 cd Displays
 sudo mkdir Contents
