@@ -31,6 +31,10 @@ chmod +x HiDPI-Fixup.sh
     * Show on Main Display Only
 * Arrange menubar items
 * Set HiDPI scale to 1440p on both monitors
-* set monitor arrangement
+* Set monitor arrangement
+* Set Finder sidebar settings
+  * Add Github folder
+  * Add all drives/partitions
+  * Add pathbar
 * Check SMBIOS type, and determine if CoconutBattery should be installed
   * Format = `%ww %r %p%`
