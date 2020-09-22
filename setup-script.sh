@@ -103,7 +103,7 @@ brew cask install steam
 brew cask install textmate
 brew cask install typora
 brew cask install vanilla
-brew cask install virtualbox
+brew cask install vmware-fusion
 brew cask install visual-studio-code
 
 
